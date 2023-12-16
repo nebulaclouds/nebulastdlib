@@ -1,0 +1,12 @@
+name: Boilerplate Upgrade Automation
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger-upgrade:
+    name: Boilerplate Upgrade Automation
+    uses: nebulaclouds/nebulatools/.github/workflows/nebula_automation.yml@master
+    with:
+      component: boilerplate
+    secrets:
+      NEBULA_BOT_PAT: ${{ secrets.NEBULA_BOT_PAT }}
