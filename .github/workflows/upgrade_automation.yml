@@ -5,7 +5,8 @@ on:
 jobs:
   trigger-upgrade:
     name: Boilerplate Upgrade Automation
-    uses: nebulaclouds/nebulatools/.github/workflows/nebula_automation.yml@master
+    uses: ./.github/workflows/nebula_automation.yml
+
     with:
       component: boilerplate
     secrets:

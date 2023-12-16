@@ -1,7 +1,9 @@
 name: Pull Request
 
-on: pull_request
-
+on:
+  push:
+    branches:
+      - master
 jobs:
   tests-lint:
     name: Run tests
@@ -26,7 +28,8 @@ jobs:
         run: make install && make test_benchmark
   lint:
     name: Lint
-    uses: nebulaclouds/nebulatools/.github/workflows/lint.yml@master
+    uses: ./.github/workflows/lint.yml
+
     with:
       go-version: '1.19'
   test-generate-integrity:
