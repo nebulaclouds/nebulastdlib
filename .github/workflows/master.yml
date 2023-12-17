@@ -6,23 +6,17 @@ on:
       - master
 
 jobs:
-#  bump-version:
-#    name: Bump Version
-#    if: github.event.commits[0].author.name != 'goreleaserbot'
-#    runs-on: ubuntu-latest
-#    outputs:
-#      version: ${{ steps.bump-version.outputs.tag }}
-#    steps:
-#      - uses: actions/checkout@v2
-#        with:
-#          fetch-depth: '0'
-#      - name: Bump version and push tag
-#        id: bump-version
-#        uses: nebulaclouds/github-tag-action@master
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          WITH_V: true
-#          DEFAULT_BUMP: patch
+
+  bump-version:
+    name: Bump Version
+    if: github.event.commits[0].author.name != 'goreleaserbot'
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.bump-version.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
 
   goreleaser:
     name: Goreleaser
