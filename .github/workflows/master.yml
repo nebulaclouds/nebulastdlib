@@ -41,8 +41,8 @@ jobs:
         with:
           version: latest
           args: release --rm-dist
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   tests-lint:
     name: Run tests and lint
